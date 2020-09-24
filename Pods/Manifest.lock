@@ -1,0 +1,20 @@
+PODS:
+  - KakaJSON (1.1.2)
+  - lottie-ios (3.1.8)
+
+DEPENDENCIES:
+  - KakaJSON (~> 1.1.2)
+  - lottie-ios
+
+SPEC REPOS:
+  trunk:
+    - KakaJSON
+    - lottie-ios
+
+SPEC CHECKSUMS:
+  KakaJSON: cc5ff50a8c1cfbb09413db8496cb709a209e6137
+  lottie-ios: 48fac6be217c76937e36e340e2d09cf7b10b7f5f
+
+PODFILE CHECKSUM: 182b6cbd91d0fb374d7b394f8d543c8b430b8095
+
+COCOAPODS: 1.9.1
