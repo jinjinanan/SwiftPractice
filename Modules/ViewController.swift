@@ -14,6 +14,7 @@ class ViewController: XXBaseViewController , UITableViewDelegate, UITableViewDat
         tv.delegate = self;
         tv.dataSource = self;
         tv.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: "UITableViewCell")
+        tv.register(XXTableViewCell.classForCoder(), forCellReuseIdentifier: "XXTableViewCell")
         return tv
     }()
     
@@ -29,14 +30,27 @@ class ViewController: XXBaseViewController , UITableViewDelegate, UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
-        cell.textLabel?.text = "UI"
-        return cell
+        if indexPath.row == 0
+        {
+            let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: "UITableViewCell", for: indexPath)
+            cell.textLabel?.text = "UI"
+            return cell
+        }
+        else
+        {
+            let cell:XXTableViewCell = tableView.dequeueReusableCell(withIdentifier: "XXTableViewCell", for: indexPath) as! XXTableViewCell
+            cell.imageV.image = UIImage.init(named: "bookhoom_click")
+            cell.titleLbl.text = "你好"
+            return cell
+        }
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.row == 0 {
-            
+        if indexPath.row == 0
+        {
+            let vc : BookShelfViewController = BookShelfViewController.init()
+            self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
