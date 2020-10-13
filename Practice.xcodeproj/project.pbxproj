@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		17513F78E741E83A3D2BD4B8 /* Pods_Practice.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E04142B4AF0D088330FEC5D0 /* Pods_Practice.framework */; };
+		84913DA3253439420042FFE8 /* BookShelfVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84913DA2253439420042FFE8 /* BookShelfVM.swift */; };
+		849BC040252FF71400761EA5 /* XXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BC03F252FF71400761EA5 /* XXConstant.swift */; };
+		849BC0462531403200761EA5 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BC0452531403200761EA5 /* NetWork.swift */; };
+		84F7FA4B253403B60001F76F /* InterfaceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7FA4A253403B60001F76F /* InterfaceConstant.swift */; };
 		9122D0912520674F002CB4E3 /* XSCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9122D0902520674F002CB4E3 /* XSCollectionViewCell.swift */; };
 		919F1D01251C38D000530C40 /* XXTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F1D00251C38D000530C40 /* XXTabBarController.swift */; };
 		919F1D07251C3A9000530C40 /* XXBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 919F1D06251C3A9000530C40 /* XXBaseViewController.swift */; };
@@ -51,6 +55,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		84913DA2253439420042FFE8 /* BookShelfVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookShelfVM.swift; path = Utilities/BookShelfVM.swift; sourceTree = SOURCE_ROOT; };
+		849BC03F252FF71400761EA5 /* XXConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXConstant.swift; sourceTree = "<group>"; };
+		849BC0452531403200761EA5 /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetWork.swift; path = Utilities/NetWork.swift; sourceTree = SOURCE_ROOT; };
+		84F7FA4A253403B60001F76F /* InterfaceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceConstant.swift; sourceTree = "<group>"; };
 		9122D0902520674F002CB4E3 /* XSCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XSCollectionViewCell.swift; sourceTree = "<group>"; };
 		9190B01C251C9DC100563B5A /* XXTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXTableViewCell.swift; sourceTree = "<group>"; };
 		919F1D00251C38D000530C40 /* XXTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXTabBarController.swift; sourceTree = "<group>"; };
@@ -130,6 +138,7 @@
 		9190B000251C939700563B5A /* NetWork */ = {
 			isa = PBXGroup;
 			children = (
+				849BC0452531403200761EA5 /* NetWork.swift */,
 			);
 			path = NetWork;
 			sourceTree = "<group>";
@@ -167,6 +176,8 @@
 			children = (
 				9190B000251C939700563B5A /* NetWork */,
 				919F1D1D251C533D00530C40 /* XXFunction.swift */,
+				849BC03F252FF71400761EA5 /* XXConstant.swift */,
+				84F7FA4A253403B60001F76F /* InterfaceConstant.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -289,6 +300,7 @@
 		91FED88D25204C2F009272E0 /* VM */ = {
 			isa = PBXGroup;
 			children = (
+				84913DA2253439420042FFE8 /* BookShelfVM.swift */,
 			);
 			path = VM;
 			sourceTree = "<group>";
@@ -493,9 +505,13 @@
 			files = (
 				91FED88725204C0E009272E0 /* XXTableViewCell.swift in Sources */,
 				919F1D1E251C533D00530C40 /* XXFunction.swift in Sources */,
+				84F7FA4B253403B60001F76F /* InterfaceConstant.swift in Sources */,
+				849BC0462531403200761EA5 /* NetWork.swift in Sources */,
 				91BE91E4251B4CFE00E898A0 /* ViewController.swift in Sources */,
 				919F1D01251C38D000530C40 /* XXTabBarController.swift in Sources */,
+				84913DA3253439420042FFE8 /* BookShelfVM.swift in Sources */,
 				91BE91E0251B4CFE00E898A0 /* AppDelegate.swift in Sources */,
+				849BC040252FF71400761EA5 /* XXConstant.swift in Sources */,
 				919F1D65251C79EC00530C40 /* XXNavigationViewController.swift in Sources */,
 				919F1D07251C3A9000530C40 /* XXBaseViewController.swift in Sources */,
 				9122D0912520674F002CB4E3 /* XSCollectionViewCell.swift in Sources */,

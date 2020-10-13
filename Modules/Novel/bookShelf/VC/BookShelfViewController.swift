@@ -8,13 +8,17 @@
 import UIKit
 
 class BookShelfViewController: XXBaseViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+    
+    let itemW = (kScreenWidth - (20*4))/3
+    let itemH = ((kScreenWidth - (20*4))/3) * 4 / 3 + 20
 
     lazy var colV : UICollectionView = {
         let layout : UICollectionViewFlowLayout = UICollectionViewFlowLayout.init()
-        layout.itemSize = CGSize.init(width: 100, height: 100)
-        layout.minimumInteritemSpacing = 10
+        layout.itemSize = CGSize.init(width: itemW, height: itemH)
+        layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 10
         let col : UICollectionView = UICollectionView.init(frame: CGRect.zero, collectionViewLayout: layout)
+        col.backgroundColor = UIColor.white
         col.translatesAutoresizingMaskIntoConstraints = false
         col.register(XSCollectionViewCell.self, forCellWithReuseIdentifier: "XSCollectionViewCell")
         col.delegate = self
@@ -25,7 +29,7 @@ class BookShelfViewController: XXBaseViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad()
     {
-        
+        a()
         super.viewDidLoad()
         self.setupUI()
         

@@ -6,6 +6,47 @@
 //
 
 import Foundation
+import UIKit
+
+
+func fetchtimeInterval() -> String {
+    let date = Date.init()
+    return String.init(date.timeIntervalSince1970)
+}
+
+func fetchCurrentLanuage() -> String {
+    return "en"
+}
+
+func fetchAppVersion() -> String {
+    return "2.0.0"
+}
+
+func fetchOSType() -> String {
+    return "2"
+}
+
+func fetchOSVersion() -> String {
+    return UIDevice.current.systemVersion
+}
+
+func fetchUUID() -> String {
+    return UIDevice.current.identifierForVendor?.uuidString ?? ""
+}
+
+func fetchPhoneType() -> String {
+    return "iOS"
+}
+
+func fetchPhoneOsVersion() -> String {
+    return "iOS\(fetchOSVersion())"
+}
+
+func fetchUTC() -> String
+{
+    String.init(TimeZone.current.secondsFromGMT())
+}
+
 
 
 /**
