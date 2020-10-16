@@ -54,9 +54,5 @@ class ViewController: XXBaseViewController , UITableViewDelegate, UITableViewDat
         }
     }
     
-    
-
-    
-
 }
 

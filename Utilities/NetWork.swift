@@ -7,6 +7,8 @@
 
 import Foundation
 import Moya
+import RxSwift
+import HandyJSON
 
 
 public enum serviceMode {
@@ -41,9 +43,23 @@ extension ApiProtocol {
     }
 }
 
+final class logPlugin:PluginType{
 
+    func willSend(_ request: RequestType, target: TargetType)
+    {
+        DLog("😄请求地址 \(String(describing: request.request?.url ?? URL.init(string: "")))")
+        DLog("😂请求参数 \(String(describing: String.init(data: request.request?.httpBody ?? Data(), encoding: String.Encoding.utf8)))")
+    }
 
-let provider = MoyaProvider<serviceMode>.init()
+    func didReceive(_ result: Result<Moya.Response, MoyaError>, target: TargetType)
+    {
+        
+    }
+}
+
+let provider = MoyaProvider<serviceMode>(plugins:[logPlugin()])
+let disposeBag = DisposeBag.init()
+
 
 var headerpramagter = {
     return ["timestamp":fetchtimeInterval(),
@@ -117,6 +133,9 @@ extension serviceMode : ApiProtocol {
 }
 
 
+
+
+
 func a () {
     
     provider.request(.test(path:Api_bookStore_free , param: [:])) { (result) in
@@ -124,8 +143,11 @@ func a () {
            case let .success(moyaResponse):
             let str = try? moyaResponse.mapString()
             let statusCode = moyaResponse.statusCode
-            print( "😊\n \(statusCode ) \n \(str ?? String.init(statusCode))😊" )
-            
+//            print( "😊\n \(statusCode ) \n \(str ?? String.init(statusCode))😊" )
+            if let model = BasicTypes.deserialize(from: str)
+            {
+//                print(model.data ?? "a")
+            }
            case let .failure(error):
             print(error)
             
@@ -133,4 +155,23 @@ func a () {
     }
     
     
+}
+
+func arx() {
+    provider.rx.request(.test(path:Api_bookStore_free , param: ["a":"b","c":"d"])).asObservable().mapHandyJsonModel(BasicTypes.self).subscribe { (event) in
+        switch event {
+        case .next(_):
+            DLog("OK")
+        case .error(_):
+            DLog("error")
+        case .completed:
+            DLog("complete")
+        }
+    }.disposed(by: disposeBag)
+
+
+
+
+
+
 }

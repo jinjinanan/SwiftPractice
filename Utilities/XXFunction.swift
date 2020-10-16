@@ -7,6 +7,10 @@
 
 import Foundation
 import UIKit
+import RxSwift
+import Moya
+import HandyJSON
+
 
 
 func fetchtimeInterval() -> String {
@@ -47,24 +51,19 @@ func fetchUTC() -> String
     String.init(TimeZone.current.secondsFromGMT())
 }
 
+func DLog(_ items: Any..., separator: String = " ", terminator: String = "\n")
+{
+    
+    #if DEBUG
+    
+    print(items, separator: separator, terminator: terminator)
+    
+    #endif
+    
+    
+}
 
 
-/**
-// app包名
-// */
-//func appPackageName() -> String? {
-//    return Bundle.main.object(forInfoDictionaryKey: "CFBundleExecutable") as? String
-//}
-//
-///**
-// 包装控制器名称
-// 主要用于字符串装控制器
-// */
-//func mapAppPackageName(_ target:String) -> String? {
-//    if target.isEmpty {
-//        return appPackageName()
-//    }
-//    var packageName = appPackageName()
-//    packageName = packageName?.replacingOccurrences(of: "-", with: "_")
-//    return packageName! + "." + target
-//}
+
+
+

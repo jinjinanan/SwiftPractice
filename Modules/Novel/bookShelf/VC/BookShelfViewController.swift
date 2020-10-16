@@ -29,7 +29,9 @@ class BookShelfViewController: XXBaseViewController, UICollectionViewDelegate, U
 
     override func viewDidLoad()
     {
-        a()
+//        a()
+        p()
+//        arx()
         super.viewDidLoad()
         self.setupUI()
         
