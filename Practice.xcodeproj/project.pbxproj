@@ -58,8 +58,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		84913DA2253439420042FFE8 /* BookShelfVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookShelfVM.swift; path = Utilities/BookShelfVM.swift; sourceTree = SOURCE_ROOT; };
-		84913DDF253590A50042FFE8 /* BasicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicTypes.swift; path = Utilities/BasicTypes.swift; sourceTree = SOURCE_ROOT; };
+		84913DA2253439420042FFE8 /* BookShelfVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookShelfVM.swift; path = Modules/Novel/bookShelf/VM/BookShelfVM.swift; sourceTree = SOURCE_ROOT; };
+		84913DDF253590A50042FFE8 /* BasicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicTypes.swift; path = Modules/Novel/bookShelf/M/BasicTypes.swift; sourceTree = SOURCE_ROOT; };
 		84913E042536AED10042FFE8 /* Observable+HandyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+HandyJSON.swift"; sourceTree = "<group>"; };
 		84913E57253ACE810042FFE8 /* practiceRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiceRealm.swift; sourceTree = "<group>"; };
 		849BC03F252FF71400761EA5 /* XXConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXConstant.swift; sourceTree = "<group>"; };
@@ -131,6 +131,22 @@
 				E04142B4AF0D088330FEC5D0 /* Pods_Practice.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8442D03A25417CFC005EC75F /* VM */ = {
+			isa = PBXGroup;
+			children = (
+				84913DA2253439420042FFE8 /* BookShelfVM.swift */,
+			);
+			path = VM;
+			sourceTree = "<group>";
+		};
+		8442D03B25417D04005EC75F /* M */ = {
+			isa = PBXGroup;
+			children = (
+				84913DDF253590A50042FFE8 /* BasicTypes.swift */,
+			);
+			path = M;
 			sourceTree = "<group>";
 		};
 		84913E452537EE480042FFE8 /* category */ = {
@@ -297,8 +313,8 @@
 		91FED88025204BAE009272E0 /* bookShelf */ = {
 			isa = PBXGroup;
 			children = (
-				91FED88E25204C33009272E0 /* M */,
-				91FED88D25204C2F009272E0 /* VM */,
+				8442D03B25417D04005EC75F /* M */,
+				8442D03A25417CFC005EC75F /* VM */,
 				91FED88C25204C2B009272E0 /* V */,
 				91FED88B25204C26009272E0 /* VC */,
 			);
@@ -319,22 +335,6 @@
 				9122D0902520674F002CB4E3 /* XSCollectionViewCell.swift */,
 			);
 			path = V;
-			sourceTree = "<group>";
-		};
-		91FED88D25204C2F009272E0 /* VM */ = {
-			isa = PBXGroup;
-			children = (
-				84913DA2253439420042FFE8 /* BookShelfVM.swift */,
-			);
-			path = VM;
-			sourceTree = "<group>";
-		};
-		91FED88E25204C33009272E0 /* M */ = {
-			isa = PBXGroup;
-			children = (
-				84913DDF253590A50042FFE8 /* BasicTypes.swift */,
-			);
-			path = M;
 			sourceTree = "<group>";
 		};
 		B4C424A97F693CD0D5FF9919 /* Pods */ = {
