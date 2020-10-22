@@ -14,7 +14,7 @@ protocol BasicProtocol {
     var result : Int? {get set}
 }
 
-struct Book : HandyJSON {
+struct Book  {
     var book_desc : String?
     var book_id : Int?
     var book_mark : Int?
@@ -27,10 +27,7 @@ struct Book : HandyJSON {
     var update_status : Int?
     var word_num : Int?
     var writer_name : String?
-    
-    
-    
-    
+
 }
 
 struct  BasicTypes: HandyJSON {

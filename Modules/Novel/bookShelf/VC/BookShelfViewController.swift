@@ -26,14 +26,18 @@ class BookShelfViewController: XXBaseViewController, UICollectionViewDelegate, U
         
         return col
     }()
+    
+    let vm : bookSelfVM = bookSelfVM()
 
     override func viewDidLoad()
     {
-//        a()
-        p()
-//        arx()
+//        testObservable()
+//        testSubject()
         super.viewDidLoad()
+        self.vm.requestBookInShelf()
         self.setupUI()
+        self.processEvent()
+        
         
     }
     
@@ -44,6 +48,12 @@ class BookShelfViewController: XXBaseViewController, UICollectionViewDelegate, U
         let vConstraint = NSLayoutConstraint.constraints(withVisualFormat: "V:|[colV]|", options: [], metrics: nil, views: ["colV":self.colV])
         self.view.addConstraints(hConstraint)
         self.view.addConstraints(vConstraint)
+    }
+    
+    func processEvent (){
+        self.vm.savedbook.subscribe { (event) in
+            DLog(event.element ?? [])
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {

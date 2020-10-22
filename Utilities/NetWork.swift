@@ -167,7 +167,7 @@ func arx() {
         case .completed:
             DLog("complete")
         }
-    }.disposed(by: disposeBag)
+    }
 
 
 

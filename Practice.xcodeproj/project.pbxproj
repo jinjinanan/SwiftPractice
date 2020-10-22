@@ -11,6 +11,7 @@
 		84913DA3253439420042FFE8 /* BookShelfVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84913DA2253439420042FFE8 /* BookShelfVM.swift */; };
 		84913DE0253590A50042FFE8 /* BasicTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84913DDF253590A50042FFE8 /* BasicTypes.swift */; };
 		84913E052536AED10042FFE8 /* Observable+HandyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84913E042536AED10042FFE8 /* Observable+HandyJSON.swift */; };
+		84913E58253ACE810042FFE8 /* practiceRealm.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84913E57253ACE810042FFE8 /* practiceRealm.swift */; };
 		849BC040252FF71400761EA5 /* XXConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BC03F252FF71400761EA5 /* XXConstant.swift */; };
 		849BC0462531403200761EA5 /* NetWork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 849BC0452531403200761EA5 /* NetWork.swift */; };
 		84F7FA4B253403B60001F76F /* InterfaceConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F7FA4A253403B60001F76F /* InterfaceConstant.swift */; };
@@ -60,6 +61,7 @@
 		84913DA2253439420042FFE8 /* BookShelfVM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BookShelfVM.swift; path = Utilities/BookShelfVM.swift; sourceTree = SOURCE_ROOT; };
 		84913DDF253590A50042FFE8 /* BasicTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = BasicTypes.swift; path = Utilities/BasicTypes.swift; sourceTree = SOURCE_ROOT; };
 		84913E042536AED10042FFE8 /* Observable+HandyJSON.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Observable+HandyJSON.swift"; sourceTree = "<group>"; };
+		84913E57253ACE810042FFE8 /* practiceRealm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = practiceRealm.swift; sourceTree = "<group>"; };
 		849BC03F252FF71400761EA5 /* XXConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XXConstant.swift; sourceTree = "<group>"; };
 		849BC0452531403200761EA5 /* NetWork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NetWork.swift; path = Utilities/NetWork.swift; sourceTree = SOURCE_ROOT; };
 		84F7FA4A253403B60001F76F /* InterfaceConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceConstant.swift; sourceTree = "<group>"; };
@@ -137,6 +139,14 @@
 				84913E042536AED10042FFE8 /* Observable+HandyJSON.swift */,
 			);
 			path = category;
+			sourceTree = "<group>";
+		};
+		84913E56253ACE610042FFE8 /* DB */ = {
+			isa = PBXGroup;
+			children = (
+				84913E57253ACE810042FFE8 /* practiceRealm.swift */,
+			);
+			path = DB;
 			sourceTree = "<group>";
 		};
 		9190AFF7251C8D6C00563B5A /* Novel */ = {
@@ -228,6 +238,7 @@
 		91BE91D3251B4CFE00E898A0 = {
 			isa = PBXGroup;
 			children = (
+				84913E56253ACE610042FFE8 /* DB */,
 				84913E452537EE480042FFE8 /* category */,
 				919F1D1C251C525400530C40 /* Utilities */,
 				919F1CF4251C37DE00530C40 /* Base */,
@@ -532,6 +543,7 @@
 				9122D0912520674F002CB4E3 /* XSCollectionViewCell.swift in Sources */,
 				91FED89125204C84009272E0 /* BookShelfViewController.swift in Sources */,
 				91BE91E2251B4CFE00E898A0 /* SceneDelegate.swift in Sources */,
+				84913E58253ACE810042FFE8 /* practiceRealm.swift in Sources */,
 				84913DE0253590A50042FFE8 /* BasicTypes.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

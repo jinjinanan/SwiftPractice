@@ -7,45 +7,102 @@
 
 import Foundation
 import RealmSwift
+import RxSwift
+import RxCocoa
 
-class Dog: Object {
-    @objc dynamic var name = "a"
-    @objc dynamic var age = 0
-}
 
-class Person: Object {
-    @objc dynamic var name = ""
-    @objc dynamic var picture: Data? = nil // optionals supported
-    let dogs = List<Dog>()
-}
+class bookSelfVM: Object {
+  
 
-let myDog = Dog()
-
-let realm = try! Realm()
-
-func p()  {
+    let savedbook = BehaviorSubject<[Book]>(value: [])
     
-    let pupies = realm.objects(Dog.self).filter("age < 2")
-    DLog("小狗数量 \(pupies.count)")
-    
-    myDog.name = "rex"
-    myDog.age = 1
-    
-    try! realm.write({
-        realm.add(myDog)
-    })
-    DLog("小狗数量 \(pupies.count)")
-    
-    // Query and update from any thread
-    DispatchQueue.init(label: "backgournd").async {
-        autoreleasepool {
-            let realm = try! Realm()
-            let theDog = realm.objects(Dog.self).filter("age == 1").first
-            try! realm.write {
-                theDog!.age = 3
+    func requestBookInShelf() {
+        provider.rx.request(.test(path:Api_bookStore_free , param: ["":""])).asObservable().mapHandyJsonModel(BasicTypes.self).subscribe {[unowned self] (event) in
+            switch event {
+            case .next(let element):
+                DLog("OK")
+                self.savedbook.onNext(element.data ?? [])
+            case .error(_):
+                DLog("error")
+            case .completed:
+                DLog("complete")
             }
-            let apupies = realm.objects(Dog.self).filter("age < 2")
-            DLog("小狗数量 \(apupies.count)")
         }
     }
 }
+
+
+class testRxVM: Object {
+   
+    
+}
+
+func testObservable() {
+    let number : Observable<Int> = Observable.create { (observer) -> Disposable in
+        observer.onNext(0)
+        observer.onNext(1)
+        observer.onNext(2)
+        observer.onCompleted()
+        return Disposables.create()
+    }
+    
+    number.subscribe { (a) in
+        DLog(a)
+    } onError: { (b) in
+        
+    } onCompleted: {
+        DLog("完成")
+    } onDisposed: {
+        
+    }
+
+}
+
+
+
+func testSubject() {
+   testBehaviorSubject()
+}
+
+func testAsyncSubject() {
+    let disposeBag = DisposeBag()
+    let subject = AsyncSubject<String>()
+    subject
+      .subscribe { print("Subscription: 1 Event:", $0) }
+      .disposed(by: disposeBag)
+
+    subject.onNext("🐶")
+    subject.onNext("🐱")
+    subject.onNext("🐹")
+    subject.onCompleted()
+}
+
+func testBehaviorSubject()
+{
+    let disposeBag = DisposeBag()
+    let subject = BehaviorSubject(value: "🔴")
+
+    subject
+      .subscribe { print("Subscription: 1 Event:", $0) }
+      .disposed(by: disposeBag)
+
+    subject.onNext("🐶")
+    subject.onNext("🐱")
+
+    subject
+      .subscribe { print("Subscription: 2 Event:", $0) }
+      .disposed(by: disposeBag)
+
+    subject.onNext("🅰️")
+    subject.onNext("🅱️")
+
+    subject
+      .subscribe { print("Subscription: 3 Event:", $0) }
+      .disposed(by: disposeBag)
+
+    subject.onNext("🍐")
+    subject.onNext("🍊")
+}
+
+
+
