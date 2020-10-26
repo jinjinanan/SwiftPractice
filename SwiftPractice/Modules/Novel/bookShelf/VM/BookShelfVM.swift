@@ -15,6 +15,7 @@ class bookSelfVM: Object {
   
 
     let savedbook = BehaviorSubject<[Book]>(value: [])
+    var disposeBag = DisposeBag()
     
     func requestBookInShelf() {
         provider.rx.request(.test(path:Api_bookStore_free , param: ["":""])).asObservable().mapHandyJsonModel(BasicTypes.self).subscribe {[unowned self] (event) in
@@ -29,34 +30,37 @@ class bookSelfVM: Object {
             }
         }
     }
-}
-
-
-class testRxVM: Object {
-   
     
+    func testObservable() {
+        let number : Observable<Int> = Observable.create { (observer) -> Disposable in
+            observer.onNext(0)
+            observer.onNext(1)
+            observer.onNext(2)
+//            一个序列如果发出了 error 或者 completed 事件，那么所有内部资源都会被释放，不需要我们手动释放。
+//            当执行销毁时，销毁的是序列和观察者之间的响应关系，不是序列和观察者对象本身
+//            如果是加入到disposeBag，是在disposeBag对象销毁时，依次销毁里面存储的东西
+//            observer.onCompleted()
+            return Disposables.create {
+                DLog("销毁释放了")
+            }
+        }
+        
+        number.subscribe { (a) in
+            DLog(a)
+        } onError: { (error) in
+            DLog(error)
+        } onCompleted: {
+            DLog("完成")
+        } onDisposed: {
+            DLog("销毁回掉")
+        }.disposed(by: disposeBag)
+    }
 }
 
-func testObservable() {
-    let number : Observable<Int> = Observable.create { (observer) -> Disposable in
-        observer.onNext(0)
-        observer.onNext(1)
-        observer.onNext(2)
-        observer.onCompleted()
-        return Disposables.create()
-    }
-    
-    number.subscribe { (a) in
-        DLog(a)
-    } onError: { (b) in
-        
-    } onCompleted: {
-        DLog("完成")
-    } onDisposed: {
-        
-    }
 
-}
+
+
+
 
 
 

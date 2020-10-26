@@ -34,9 +34,10 @@ class BookShelfViewController: XXBaseViewController, UICollectionViewDelegate, U
 //        testObservable()
 //        testSubject()
         super.viewDidLoad()
-        self.vm.requestBookInShelf()
+//        self.vm.requestBookInShelf()
         self.setupUI()
-        self.processEvent()
+        self.vm.testObservable()
+//        self.processEvent()
         
         
     }
