@@ -31,6 +31,7 @@
 		8442D0C12547B9CF005EC75F /* yukon_charleyrivers.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8442D0BA2547B9CE005EC75F /* yukon_charleyrivers.jpg */; };
 		8442D0C22547B9CF005EC75F /* silversalmoncreek.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8442D0BB2547B9CE005EC75F /* silversalmoncreek.jpg */; };
 		8442D0C32547B9CF005EC75F /* twinlake.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8442D0BC2547B9CF005EC75F /* twinlake.jpg */; };
+		8442D0C62547C7FC005EC75F /*  LandmarkList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8442D0C52547C7FB005EC75F /*  LandmarkList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +61,7 @@
 		8442D0BA2547B9CE005EC75F /* yukon_charleyrivers.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yukon_charleyrivers.jpg; sourceTree = "<group>"; };
 		8442D0BB2547B9CE005EC75F /* silversalmoncreek.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = silversalmoncreek.jpg; sourceTree = "<group>"; };
 		8442D0BC2547B9CF005EC75F /* twinlake.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = twinlake.jpg; sourceTree = "<group>"; };
+		8442D0C52547C7FB005EC75F /*  LandmarkList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = " LandmarkList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,9 +94,9 @@
 		8442D07B254672D5005EC75F /* swiftUIPractice */ = {
 			isa = PBXGroup;
 			children = (
+				8442D0992546CD81005EC75F /* Models */,
 				8442D0A52546D7E8005EC75F /* Views */,
 				8442D0A12546D316005EC75F /* Resource */,
-				8442D0992546CD81005EC75F /* Models */,
 				8442D07C254672D5005EC75F /* AppDelegate.swift */,
 				8442D07E254672D5005EC75F /* SceneDelegate.swift */,
 				8442D082254672D8005EC75F /* Assets.xcassets */,
@@ -149,6 +151,7 @@
 				8442D0912546AFF6005EC75F /* CircleImage.swift */,
 				8442D0942546B6FA005EC75F /*  MapView.swift */,
 				8442D0A62546D810005EC75F /* LandmarkRow.swift */,
+				8442D0C52547C7FB005EC75F /*  LandmarkList.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -237,6 +240,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8442D09F2546D2C5005EC75F /* Data.swift in Sources */,
+				8442D0C62547C7FC005EC75F /*  LandmarkList.swift in Sources */,
 				8442D07D254672D5005EC75F /* AppDelegate.swift in Sources */,
 				8442D0922546AFF6005EC75F /* CircleImage.swift in Sources */,
 				8442D0952546B6FA005EC75F /*  MapView.swift in Sources */,
