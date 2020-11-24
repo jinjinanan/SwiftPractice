@@ -1,4 +1,4 @@
-package com.example.a.ha;
+package com.example.a;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.CreditCardNumber;

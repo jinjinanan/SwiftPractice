@@ -1,7 +1,8 @@
-package com.example.a.ha;
+package com.example.a.web;
 
-import com.example.a.ha.Ingredient;
-import com.example.a.ha.Ingredient.Type;
+import com.example.a.Ingredient;
+import com.example.a.Taco;
+import com.example.a.Ingredient.Type;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
