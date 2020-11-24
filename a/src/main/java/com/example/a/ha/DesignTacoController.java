@@ -5,11 +5,14 @@ import com.example.a.ha.Ingredient.Type;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.ui.Model;
 
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -38,13 +41,17 @@ public class DesignTacoController {
         for (Type type : types){
             model.addAttribute(type.toString().toLowerCase(),filterByType(ingredientList,type));
         }
-//        model.addAttribute("design",new )
+        model.addAttribute("design",new Taco());
 
         return "design";
     }
 
     @PostMapping
-    public String processDesign(Taco design){
+    public String processDesign(@Valid @ModelAttribute("design") Taco design, Errors errors, Model model){
+        if (errors.hasErrors())
+        {
+            return "design";
+        }
         log.info("processing design:"+design);
         return "redirect:/orders/current";
     }
