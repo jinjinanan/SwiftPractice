@@ -18,15 +18,15 @@ public class Order {
     private Date placedAt;
 
     @NotBlank(message = "Name is required")
-    private String name;
+    private String deliveryName;
     @NotBlank(message = "street is required")
-    private String street;
+    private String deliveryStreet;
     @NotBlank(message = "city is required")
-    private String city;
+    private String deliveryCity;
     @NotBlank(message = "state is required")
-    private String state;
+    private String deliveryState;
     @NotBlank(message = "zip is required")
-    private String zip;
+    private String deliveryZip;
     @CreditCardNumber(message = "Not a valid credit card number")
     private String ccNumber;
     @Pattern(regexp = "^(0[1-9]|1[0-2])([\\/])([1-9][0-9])$",message = "Must be formatted MM/YY")
