@@ -1,8 +1,8 @@
 package com.example.a.data;
-import com.example.a.Ingredient;
 
-public interface IngredientRepository {
-    Iterable<Ingredient> findAll();
-    Ingredient findOne(String id);
-    Ingredient save(Ingredient ingredient);
+import com.example.a.Ingredient;
+import org.springframework.data.repository.CrudRepository;
+
+public interface IngredientRepository extends CrudRepository<Ingredient,String> {
+
 }

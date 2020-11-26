@@ -16,11 +16,8 @@ import org.springframework.ui.Model;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
-
-import com.example.a.data.IngredientRepository;
 
 @Slf4j
 @Controller
@@ -29,15 +26,15 @@ import com.example.a.data.IngredientRepository;
 public class DesignTacoController {
 
     private final IngredientRepository ingredientRepo;
-    private TacoRepository designRepo;
+    private TacoRepository TacoRepo;
 
     @Autowired
     public DesignTacoController(
             IngredientRepository ingredientRepo,
-            TacoRepository designRepo
+            TacoRepository TacoRepo
     )
     {
-        this.designRepo = designRepo;
+        this.TacoRepo = TacoRepo;
         this.ingredientRepo = ingredientRepo;
     }
 
@@ -60,14 +57,14 @@ public class DesignTacoController {
     }
 
     @PostMapping
-    public String processDesign(@Valid Taco design, Errors errors,@ModelAttribute Order order){
+    public String processDesign(@Valid Taco taco, Errors errors,@ModelAttribute Order order){
         if (errors.hasErrors())
         {
             return "design";
         }
-        log.info("processing design:"+design);
-        Taco taco = designRepo.save(design);
-        order.addDesign(taco);
+        log.info("processing design:"+taco);
+        Taco saved = TacoRepo.save(taco);
+        order.addDesign(saved);
         return "redirect:/orders/current";
     }
 
