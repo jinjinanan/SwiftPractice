@@ -9,5 +9,9 @@
         Welcome to ...
     </h1>
     <img th:src="@{/images/food.jpeg}"/>
+
+    <form method="POST" th:action="@{/logout}" id="logoutForm">
+        <input type="submit" value="Logout"/>
+    </form>
 </body>
 </html>

@@ -23,6 +23,9 @@ public class Order {
     private Long id;
     private Date placedAt;
 
+    @ManyToOne
+    private User user;
+
     @NotBlank(message = "Name is required")
     private String deliveryName;
     @NotBlank(message = "street is required")
